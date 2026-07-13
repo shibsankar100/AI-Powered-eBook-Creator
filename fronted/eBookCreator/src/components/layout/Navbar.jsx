@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "../../context/AuthContext";
 import ProfileDropdown from "./ProfileDropdown";
-import { Menu, X, BookOpen } from "lucide-react";
+import { Menu, X, BookOpen, LogOut } from "lucide-react";
 
 const Navbar = () => {
   const { user, logout, isAuthenticated } = useAuth();
@@ -103,6 +103,75 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+ {/* Mobile menu */}
+{isOpen && (
+  <div className="lg:hidden bg-white border-t border-gray-100 animate-in slide-in-from-top duration-200">
+    
+    <nav className="flex flex-col px-6 py-4 space-y-2">
+      {navLinks.map((link) => (
+        <a
+          key={link.name}
+          href={link.href}
+          className="px-4 py-3 text-sm font-medium text-gray-600 hover:text-violet-600 hover:bg-violet-50 rounded-lg transition-all duration-200"
+        >
+          {link.name}
+        </a>
+      ))}
+    </nav>
+
+    <div className="border-t border-gray-100 px-6 py-4">
+      {isAuthenticated ? (
+        <>
+          <div className="flex items-center gap-3 mb-4">
+            
+            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-violet-500 to-purple-500 flex items-center justify-center text-white font-semibold">
+              <span>
+                {user?.name?.charAt(0).toUpperCase()}
+              </span>
+            </div>
+
+            <div>
+              <div className="font-medium text-gray-900">
+                {user?.name}
+              </div>
+              <div className="text-sm text-gray-500">
+                {user?.email}
+              </div>
+            </div>
+
+          </div>
+
+          <button
+            className="w-full flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-red-600 border border-red-200 rounded-lg hover:bg-red-50 transition-all duration-200"
+            onClick={() => logout()}
+          >
+            <LogOut className="w-4 h-4" />
+            <span>Sign out</span>
+          </button>
+        </>
+      ) : (
+        <div className="flex flex-col gap-3">
+          
+          <a
+            href="/login"
+            className="w-full text-center px-4 py-3 text-sm font-medium text-gray-700 border border-gray-200 rounded-lg hover:bg-gray-50 transition-all duration-200"
+          >
+            Login
+          </a>
+
+          <a
+            href="/signup"
+            className="w-full text-center px-4 py-3 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-purple-600 rounded-lg hover:from-violet-700 hover:to-purple-700 transition-all duration-200"
+          >
+            Get Started
+          </a>
+
+        </div>
+      )}
+    </div>
+
+  </div>
+)}
     </header>
   );
 };
