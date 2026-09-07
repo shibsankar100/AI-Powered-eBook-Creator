@@ -1,0 +1,29 @@
+[33mcommit 920f26089dd4fdf29c09ba6761cb57039e3221a6[m
+Author: shibsankar100 <shibsankarsau100@gmail.com>
+Date:   Tue Sep 8 00:27:24 2026 +0530
+
+    Update project
+
+[33mcommit 2351a4e141835f69601bbca00258b6fdde798825[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: shibsankar100 <shibsankarsau100@gmail.com>
+Date:   Mon Jul 13 20:58:25 2026 +0530
+
+    Remove backend .env
+
+[33mcommit c0e1c107ba55b514489b15259348fb581c90e58b[m
+Author: shibsankar100 <shibsankarsau100@gmail.com>
+Date:   Mon Jul 13 20:54:03 2026 +0530
+
+    save current changes
+
+[33mcommit 36d62d7f0d5dcb3a4d6a52930be5064b2e44f97f[m
+Author: shibsankar100 <shibsankarsau100@gmail.com>
+Date:   Mon Jul 13 20:49:34 2026 +0530
+
+    Remove .env
+
+[33mcommit fca1f12fc0596942f574a88da477e4647e294ec5[m
+Author: shibsankar100 <shibsankarsau100@gmail.com>
+Date:   Sat Jun 6 21:42:30 2026 +0530
+
+    Initial Commit
