@@ -13,7 +13,7 @@ import {
     ArrowUpRight,
 } from "lucide-react";
 
-import DashboardLayout from "../components/layout/DashboardLayout";
+import DashboardLayout from "../components/layout/DashBoardLayout";
 import Button from "../components/ui/Button";
 import axiosInstance from "../utils/axioinstance";
 import { API_PATHS } from "../utils/apiPaths";

@@ -8,7 +8,7 @@ import {
     Sparkles,
 } from "lucide-react";
 
-import DashboardLayout from "../components/layout/DashboardLayout";
+import DashboardLayout from "../components/layout/DashBoardLayout";
 import InputField from "../components/ui/InputField";
 import Button from "../components/ui/Button";
 import { useAuth } from "../context/AuthContext";
