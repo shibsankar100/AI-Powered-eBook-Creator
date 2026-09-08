@@ -18,7 +18,7 @@ import Button from "../components/ui/Button";
 import axiosInstance from "../utils/axioinstance";
 import { API_PATHS } from "../utils/apiPaths";
 import BookCard from "../components/cards/BookCard";
-import CreateBookModal from "../components/modals/CreateBookModal";
+import CreateBookModal from "../components/modals/CreateBookmodal";
 
 const BookCardSkeleton = () => {
     return (
