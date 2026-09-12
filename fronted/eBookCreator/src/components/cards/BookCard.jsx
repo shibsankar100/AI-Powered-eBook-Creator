@@ -8,7 +8,8 @@ import {
     ArrowUpRight,
 } from "lucide-react";
 
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL =
+    import.meta.env.VITE_API_URL || "http://localhost:8000";
 
 const BookCard = ({ book, onDelete }) => {
     const navigate = useNavigate();
@@ -32,15 +33,18 @@ const BookCard = ({ book, onDelete }) => {
         if (!coverImage) {
             return "";
         }
+
         if (
             coverImage.startsWith("http://") ||
             coverImage.startsWith("https://")
         ) {
             return coverImage;
         }
+
         if (coverImage.startsWith("blob:")) {
             return coverImage;
         }
+
         if (coverImage.startsWith("data:image")) {
             return coverImage;
         }
@@ -72,6 +76,7 @@ const BookCard = ({ book, onDelete }) => {
 
         onDelete?.(book);
     };
+
     const handleOpenBook = () => {
         if (!book?._id) {
             return;
@@ -179,6 +184,7 @@ const BookCard = ({ book, onDelete }) => {
                                 blur-2xl
                             "
                         />
+
                         <div
                             className="
                                 relative
@@ -201,6 +207,7 @@ const BookCard = ({ book, onDelete }) => {
                                 strokeWidth={1.7}
                             />
                         </div>
+
                         <h2
                             className="
                                 relative
@@ -213,6 +220,7 @@ const BookCard = ({ book, onDelete }) => {
                         >
                             {title}
                         </h2>
+
                         <p
                             className="
                                 relative
@@ -226,6 +234,7 @@ const BookCard = ({ book, onDelete }) => {
                         </p>
                     </div>
                 )}
+
                 <div
                     className="
                         pointer-events-none
@@ -241,6 +250,7 @@ const BookCard = ({ book, onDelete }) => {
                         group-hover:opacity-100
                     "
                 />
+
                 <div
                     className="
                         absolute
@@ -287,6 +297,7 @@ const BookCard = ({ book, onDelete }) => {
                     >
                         <Pencil className="h-3 w-3" />
                     </button>
+
                     <button
                         type="button"
                         onClick={handleDelete}
@@ -369,6 +380,7 @@ const BookCard = ({ book, onDelete }) => {
                         <Trash2 className="h-3 w-3" />
                     </button>
                 </div>
+
                 <div
                     className="
                         absolute
@@ -415,6 +427,7 @@ const BookCard = ({ book, onDelete }) => {
                 >
                     {title}
                 </h3>
+
                 <div className="mt-2 flex min-w-0 items-center gap-1.5">
                     <div
                         className="
